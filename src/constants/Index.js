@@ -1,11 +1,5 @@
 // All sizes are relative to Sun radius = 1
 export const PLANET_DATA = {
-  SUN: {
-    radius: 1,
-    color: '#FDB813',
-    emissive: '#FFA500',
-    emissiveIntensity: 0.5
-  },
   MERCURY: {
     radius: 0.035,  // Mercury is ~3.5% of Sun's radius
     color: '#8C7853',
