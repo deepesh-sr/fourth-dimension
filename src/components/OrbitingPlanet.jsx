@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Planet from "./Planet.jsx";
 import { PLANET_DATA } from "../constants/Index";
 
-const OrbitingPlanet = ({orbitRadius,orbitSpeed,PLANET_DATA,...props}) => {
+const OrbitingPlanet = ({orbitRadius,orbitSpeed,radius,texture,...props}) => {
     const obritRef = useRef();
 
     useFrame((state, delta) => {
@@ -17,8 +17,8 @@ const OrbitingPlanet = ({orbitRadius,orbitSpeed,PLANET_DATA,...props}) => {
         <group ref={obritRef} {...props}>
             <Planet 
             position={[orbitRadius,0,0]}
-            scale = {PLANET_DATA.radius}
-            color = {PLANET_DATA.color}
+            scale = {radius}
+            texturePath={texture}
             />
         </group>
     )
