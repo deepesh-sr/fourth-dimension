@@ -9,22 +9,25 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { useControls } from "leva";
 function App() {
 
-  const { earthSpeed ,mercurySpeed ,venusSpeed,MarsSpeed,JupiterSpeed,SaturnSpeed,Uranusspeed,NeptuneSpeed} = useControls({
 
+  //create interactive sliders
+  const { earthSpeed, mercurySpeed, venusSpeed, MarsSpeed, JupiterSpeed, SaturnSpeed, Uranusspeed, NeptuneSpeed } = useControls({
+    // Mercury speed slider and similar for all the object
     mercurySpeed:
     {
-      value: PLANET_DATA.EARTH.orbitSpeed,
+      value: PLANET_DATA.MERCURY.orbitSpeed,
       min: 0,
       max: 5
     },
 
     venusSpeed:
     {
-      label:"Venus",
-      value: PLANET_DATA.EARTH.orbitSpeed,
+      label: "Venus",
+      value: PLANET_DATA.VENUS.orbitSpeed,
       min: 0,
       max: 5
     },
+
     earthSpeed:
     {
       value: PLANET_DATA.EARTH.orbitSpeed,
@@ -33,32 +36,32 @@ function App() {
     },
     MarsSpeed:
     {
-      value: PLANET_DATA.EARTH.orbitSpeed,
+      value: PLANET_DATA.MARS.orbitSpeed,
       min: 0,
       max: 5
     },
     JupiterSpeed:
     {
-      value: PLANET_DATA.EARTH.orbitSpeed,
-      min: 0,
+      value: PLANET_DATA.JUPITER.orbitSpeed,
+      min: 0.0001,
       max: 5
     },
     SaturnSpeed:
     {
-      value: PLANET_DATA.EARTH.orbitSpeed,
-      min: 0,
+      value: PLANET_DATA.SATURN.orbitSpeed,
+      min: 0.0001,
       max: 5
     },
     Uranusspeed:
     {
-      value: PLANET_DATA.EARTH.orbitSpeed,
-      min: 0,
+      value: PLANET_DATA.URANUS.orbitSpeed,
+      min: 0.0001,
       max: 5
     },
     NeptuneSpeed:
     {
-      value: PLANET_DATA.EARTH.orbitSpeed,
-      min: 0,
+      value: PLANET_DATA.NEPTUNE.orbitSpeed,
+      min: 0.0001,
       max: 5
     },
   })
@@ -84,18 +87,24 @@ function App() {
       <Stars
         radius={100}        // Radius of the star sphere
         depth={50}          // Depth of field
-        count={5000}        // Number of stars
+        count={700}        // Number of stars
         factor={4}          // Size factor
         saturation={0}      // Saturation (0 = white stars)
         fade={true}         // Fade stars based on distance
         speed={1}           // Animation speed
       />
 
-      <group scale={1} position={[0, 0, 0]}>
+      <group scale={0.5} position={[0, 0, 0]}>
+    
+   {/* The sun element   */}
         <Sun position={[0, 0, 0]} />
+   
+   {/* blooming light to the environment */}
         <EffectComposer>
           <Bloom intensity={1} luminanceThreshold={0.2} />
         </EffectComposer>
+
+ {/* orbit of all the planets from mercury to neptune  */}
         <Ring position={[0, 0, 0]} args={[3, 3.001, 128]} />
         <Ring position={[0, 0, 0]} args={[4, 4.001, 128]} />
         <Ring position={[0, 0, 0]} args={[5, 5.001, 128]} />
@@ -105,6 +114,7 @@ function App() {
         <Ring position={[0, 0, 0]} args={[15, 15.001, 128]} />
         <Ring position={[0, 0, 0]} args={[18, 18.001, 128]} />
 
+{/* All planets  */}
 
         {/* Mercury */}
         <OrbitingPlanet
