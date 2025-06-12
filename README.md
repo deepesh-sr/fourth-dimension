@@ -71,15 +71,15 @@ Real-time Updates: Changes apply instantly
 Planet Labels: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
 
 ## 🛠️ Technical Stack
-Core Technologies
-React 18 - Modern UI framework
-Three.js - 3D graphics engine
-React Three Fiber - React renderer for Three.js
-React Three Drei - Utility components and helpers
-Additional Libraries
-Leva - Real-time GUI controls
-Post-processing - Visual effects pipeline
-React Three PostProcessing - Bloom and lighting effects
+> Core Technologies
+> React 18 - Modern UI framework
+> Three.js - 3D graphics engine
+> React Three Fiber - React renderer for Three.js
+> React Three Drei - Utility components and helpers
+> Additional Libraries
+> Leva - Real-time GUI controls
+> Post-processing - Visual effects pipeline
+> React Three PostProcessing - Bloom and lighting effects
 
 ## Project Structure
 ```
