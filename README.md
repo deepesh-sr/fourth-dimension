@@ -40,7 +40,7 @@ Make sure you have Node.js installed on your machine:
 
 3. **Add Planet Textures** 
     Create texture directory and add planet images.
-    
+``` 
 public/
 └── textures/
     ├── mercurymap.jpg
@@ -51,8 +51,9 @@ public/
     ├── saturnmap.jpg
     ├── uranusmap.jpg
     └── neptunemap.jpg
+```
 
-4. **Start Developement Server**
+5. **Start Developement Server**
  ```bash
  npm run dev
  ```
@@ -69,9 +70,19 @@ Individual Sliders: Adjust each planet's orbital speed (0-5 range)
 Real-time Updates: Changes apply instantly
 Planet Labels: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
 
+## 🛠️ Technical Stack
+Core Technologies
+React 18 - Modern UI framework
+Three.js - 3D graphics engine
+React Three Fiber - React renderer for Three.js
+React Three Drei - Utility components and helpers
+Additional Libraries
+Leva - Real-time GUI controls
+Post-processing - Visual effects pipeline
+React Three PostProcessing - Bloom and lighting effects
 
 ## Project Structure
-````
+```
 src/
 ├── components/
 │   ├── Sun.jsx              # Central star component
@@ -89,13 +100,3 @@ public/
     └── ... (other planet textures)
 ```
 
-## 🛠️ Technical Stack
-Core Technologies
-React 18 - Modern UI framework
-Three.js - 3D graphics engine
-React Three Fiber - React renderer for Three.js
-React Three Drei - Utility components and helpers
-Additional Libraries
-Leva - Real-time GUI controls
-Post-processing - Visual effects pipeline
-React Three PostProcessing - Bloom and lighting effects
